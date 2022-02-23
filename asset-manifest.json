@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Batttler/static/css/main.ca05872b.chunk.css",
-    "main.js": "/Batttler/static/js/main.bc83a59c.chunk.js",
-    "main.js.map": "/Batttler/static/js/main.bc83a59c.chunk.js.map",
-    "runtime-main.js": "/Batttler/static/js/runtime-main.2aef6d7f.js",
-    "runtime-main.js.map": "/Batttler/static/js/runtime-main.2aef6d7f.js.map",
-    "static/js/2.6d069084.chunk.js": "/Batttler/static/js/2.6d069084.chunk.js",
-    "static/js/2.6d069084.chunk.js.map": "/Batttler/static/js/2.6d069084.chunk.js.map",
-    "static/js/3.1ec566e3.chunk.js": "/Batttler/static/js/3.1ec566e3.chunk.js",
-    "static/js/3.1ec566e3.chunk.js.map": "/Batttler/static/js/3.1ec566e3.chunk.js.map",
-    "index.html": "/Batttler/index.html",
-    "static/css/main.ca05872b.chunk.css.map": "/Batttler/static/css/main.ca05872b.chunk.css.map",
-    "static/js/2.6d069084.chunk.js.LICENSE.txt": "/Batttler/static/js/2.6d069084.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/Batttler/static/media/Inconsolata-Regular.ed7f6e5b.ttf"
+    "main.css": "/Battler/static/css/main.c9fd8977.chunk.css",
+    "main.js": "/Battler/static/js/main.bc83a59c.chunk.js",
+    "main.js.map": "/Battler/static/js/main.bc83a59c.chunk.js.map",
+    "runtime-main.js": "/Battler/static/js/runtime-main.261d0928.js",
+    "runtime-main.js.map": "/Battler/static/js/runtime-main.261d0928.js.map",
+    "static/js/2.6d069084.chunk.js": "/Battler/static/js/2.6d069084.chunk.js",
+    "static/js/2.6d069084.chunk.js.map": "/Battler/static/js/2.6d069084.chunk.js.map",
+    "static/js/3.1ec566e3.chunk.js": "/Battler/static/js/3.1ec566e3.chunk.js",
+    "static/js/3.1ec566e3.chunk.js.map": "/Battler/static/js/3.1ec566e3.chunk.js.map",
+    "index.html": "/Battler/index.html",
+    "static/css/main.c9fd8977.chunk.css.map": "/Battler/static/css/main.c9fd8977.chunk.css.map",
+    "static/js/2.6d069084.chunk.js.LICENSE.txt": "/Battler/static/js/2.6d069084.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Battler/static/media/Inconsolata-Regular.ed7f6e5b.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.2aef6d7f.js",
+    "static/js/runtime-main.261d0928.js",
     "static/js/2.6d069084.chunk.js",
-    "static/css/main.ca05872b.chunk.css",
+    "static/css/main.c9fd8977.chunk.css",
     "static/js/main.bc83a59c.chunk.js"
   ]
 }
