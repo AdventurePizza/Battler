@@ -1,25 +1,230 @@
-import logo from './logo.svg';
-import './App.css';
+// @ts-nocheck
+import "./App.css";
+import React, { useEffect, useState } from "react";
+
+//ui
+import { Button } from "@material-ui/core";
+
+//logic
+import { DAppClient } from "@airgap/beacon-sdk";
+import Unity, { UnityContext } from "react-unity-webgl";
+//import { FirebaseContext } from "./firebaseContext";
+
+const dAppClient = new DAppClient({ name: "Beacon Docs" });
+
+const unityContext = new UnityContext({
+  loaderUrl: "buildUnity/Build/buildUnity.loader.js",
+  dataUrl: "buildUnity/Build/buildUnity.data",
+  frameworkUrl: "buildUnity/Build/buildUnity.framework.js",
+  codeUrl: "buildUnity/Build/buildUnity.wasm",
+});
 
 function App() {
+  //const { getNfts } = useContext(FirebaseContext);
+  const [activeAccount, setActiveAccount] = useState();
+  const [synced, setSynced] = useState("sync");
+  const [showUnsync, setShowUnsync] = useState(false);
+
+  async function setCharacters(objktIds) {
+
+    unityContext.send("GameManager", "setCharacters", objktIds);
+  }
+
+  useEffect(() => {
+    async function fetchGraphQL(operationsDoc, operationName, variables) {
+      let result = await fetch('https://api.fxhash.xyz/graphql', {
+        method: 'POST',
+        body: JSON.stringify({
+          query: operationsDoc,
+          variables: variables,
+          operationName: operationName,
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+
+      var ress = await result.json();
+      return ress;
+    }
+
+    async function fetchCollection(addr) {
+      const { errors, data } = await fetchGraphQL(
+        query_collection,
+        'Query',
+        {
+          "id": addr,
+          "skip": 0,
+          "take": 20,
+          "filters": {},
+          "sort": {
+            "id": "DESC"
+          }
+        }
+      )
+      if (errors) {
+        console.error(errors)
+      }
+      console.log(data)
+      const result = data ? data.user.objkts : null;
+      let traits = result.map(({ issuer, metadata, assigned }) => ((issuer.author.id === "tz2DNkXjYmJwtYceizo3LwNVrqfrguWoqmBE" && assigned) ?
+        (metadata.attributes[0].value + "." + metadata.attributes[1].value + "." + metadata.attributes[2].value) : null));
+      traits = traits.join();
+      setTimeout(setCharacters, 5000, traits);
+
+      /*
+      const result = data ? data.hic_et_nunc_token_holder : null;
+      console.log(result)
+      setCollections(result)
+      let objktIds = result.map(({ token }) => (token.id))
+      objktIds = objktIds.join();
+      console.log(objktIds)
+      setTimeout(setCharacters, 5000, objktIds);
+      return result
+      */
+    }
+    if (activeAccount) {
+      //getNfts(activeAccount.address);
+      fetchCollection(activeAccount.address);
+    }
+
+  }, [activeAccount]);
+
+
+  useEffect(() => {
+    async function getAcc() {
+      setActiveAccount(await dAppClient.getActiveAccount());
+      if (activeAccount) {
+        setSynced(
+          activeAccount.address.slice(0, 6) +
+          "..." +
+          activeAccount.address.slice(32, 36)
+        );
+        setShowUnsync(true);
+      } else {
+        setSynced("sync");
+        setShowUnsync(false);
+      }
+    }
+    getAcc();
+  }, [activeAccount]);
+
+  async function unsync() {
+    setActiveAccount(await dAppClient.getActiveAccount());
+    if (activeAccount) {
+      // User already has account connected, everything is ready
+      dAppClient.clearActiveAccount().then(async () => {
+        setActiveAccount(await dAppClient.getActiveAccount());
+        setSynced("sync");
+        setShowUnsync(false);
+      });
+    }
+  }
+
+  async function sync() {
+    setActiveAccount(await dAppClient.getActiveAccount());
+    //Already connected
+    if (activeAccount) {
+      setSynced(activeAccount.address);
+      setShowUnsync(true);
+      return activeAccount;
+    }
+    // The user is not synced yet
+    else {
+      try {
+        console.log("Requesting permissions...");
+        const permissions = await dAppClient.requestPermissions();
+        setActiveAccount(await dAppClient.getActiveAccount());
+        console.log("Got permissions:", permissions.address);
+        setSynced(permissions.address);
+        setShowUnsync(true);
+
+      } catch (error) {
+        console.log("Got error:", error);
+      }
+    }
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <Unity
+        unityContext={unityContext}
+        style={{ width: "100%", height: "100vh" }}
+      />
+
+      <div
+        className="top-right"
+        style={{ position: "absolute", display: "flex", alignItems: "center", backgroundColor: "white" }}
+      >
+        {showUnsync && (
+          <Button
+            size={"small"}
+            title={"unsync"}
+            onClick={() => {
+              unsync();
+            }}
+          >
+            <u>unsync</u>{" "}
+          </Button>
+        )}
+
+        {showUnsync && <div> | </div>}
+        <Button
+          title={"sync"}
+          size={"small"}
+          onClick={async () => {
+            await sync();
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <u>{synced}</u>{" "}
+        </Button>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+const query_collection = `
+query Query($id: String!, $take: Int, $skip: Int, $sort: UserCollectionSortInput, $filters: ObjktFilter) {
+  user(id: $id) {
+    id
+    objkts(take: $take, skip: $skip, sort: $sort, filters: $filters) {
+      id
+      assigned
+      rarity
+      iteration
+      owner {
+        id
+        name
+        flag
+        avatarUri
+        __typename
+      }
+      issuer {
+        name
+        flag
+        author {
+          id
+          name
+          flag
+          avatarUri
+          __typename
+        }
+        __typename
+      }
+      name
+      metadata
+      createdAt
+      offer {
+        id
+        price
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`
