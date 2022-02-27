@@ -67,7 +67,7 @@ function App() {
       }
       console.log(data)
       const result = data ? data.user.objkts : null;
-      let traits = result.map(({ issuer, metadata, assigned }) => ((issuer.author.id === "tz2DNkXjYmJwtYceizo3LwNVrqfrguWoqmBE" && assigned) ?
+      let traits = result.map(({ issuer, metadata, assigned, id }) => ((issuer.author.id === "tz2DNkXjYmJwtYceizo3LwNVrqfrguWoqmBE" && issuer.name === "Batch 2 Test Collection" && assigned) ?
         (metadata.attributes[0].value + "." + metadata.attributes[1].value + "." + metadata.attributes[2].value) : null));
       traits = traits.join();
       setTimeout(setCharacters, 5000, traits);
@@ -148,14 +148,23 @@ function App() {
 
   return (
     <div>
+      <div
+        className="top-left"
+        style={{ position: "absolute", display: "flex", alignItems: "center", backgroundColor: "black", padding: 6, color: "white" }}
+      >
+        Elementals
+      </div>
+
+
       <Unity
         unityContext={unityContext}
-        style={{ width: "100%", height: "100vh" }}
+        //matchWebGLToCanvasSize={true}
+        style={{ width: "100vw", height: "100vh" }}
       />
 
       <div
         className="top-right"
-        style={{ position: "absolute", display: "flex", alignItems: "center", backgroundColor: "white" }}
+        style={{ position: "absolute", display: "flex", alignItems: "center", backgroundColor: "black", color: "white" }}
       >
         {showUnsync && (
           <Button
@@ -164,6 +173,7 @@ function App() {
             onClick={() => {
               unsync();
             }}
+            style={{ fontFamily: "Alagard", color: "white" }}
           >
             <u>unsync</u>{" "}
           </Button>
@@ -176,6 +186,7 @@ function App() {
           onClick={async () => {
             await sync();
           }}
+          style={{ fontFamily: "Alagard", color: "white" }}
         >
           <u>{synced}</u>{" "}
         </Button>

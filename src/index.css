@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: clip;
   overflow-x: clip;
+
 }
 @media screen and (min-width: 500px) {
   ::-webkit-scrollbar {
@@ -33,4 +34,9 @@ code {
 @font-face {
   font-family: "Inconsolata";
   src: url(./assets/fonts/Inconsolata-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Alagard";
+  src: url(./assets/fonts/Alagard.ttf);
 }
