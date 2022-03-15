@@ -68,7 +68,7 @@ function App() {
       console.log(data)
       const result = data ? data.user.objkts : null;
       let traits = result.map(({ issuer, metadata, assigned, id }) => ((issuer.author.id === "tz2DNkXjYmJwtYceizo3LwNVrqfrguWoqmBE" && issuer.name === "Batch 2 Test Collection" && assigned) ?
-        (metadata.attributes[0].value + "." + metadata.attributes[1].value + "." + metadata.attributes[2].value) : null));
+        (metadata.attributes[0].value + "." + metadata.attributes[1].value + "." + metadata.attributes[2].value + "." + metadata.attributes[3].value + "." + metadata.attributes[4].value + "." + metadata.attributes[5].value + "." + metadata.attributes[6].value) : null));
       traits = traits.join();
       setTimeout(setCharacters, 5000, traits);
 
