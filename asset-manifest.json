@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.86b8d84a.chunk.css",
-    "main.js": "/static/js/main.2870fac1.chunk.js",
-    "main.js.map": "/static/js/main.2870fac1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.cf232eb4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.cf232eb4.js.map",
-    "static/js/2.c8f980a2.chunk.js": "/static/js/2.c8f980a2.chunk.js",
-    "static/js/2.c8f980a2.chunk.js.map": "/static/js/2.c8f980a2.chunk.js.map",
-    "static/js/3.9e68d45b.chunk.js": "/static/js/3.9e68d45b.chunk.js",
-    "static/js/3.9e68d45b.chunk.js.map": "/static/js/3.9e68d45b.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.86b8d84a.chunk.css.map": "/static/css/main.86b8d84a.chunk.css.map",
-    "static/js/2.c8f980a2.chunk.js.LICENSE.txt": "/static/js/2.c8f980a2.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/Inconsolata-Regular.ed7f6e5b.ttf",
-    "static/media/anim.9b02fd1e.png": "/static/media/anim.9b02fd1e.png",
-    "static/media/beacon.3704f31b.svg": "/static/media/beacon.3704f31b.svg",
-    "static/media/card.d2be01bc.png": "/static/media/card.d2be01bc.png",
-    "static/media/twitter.22098cea.png": "/static/media/twitter.22098cea.png"
+    "main.css": "/AdventurePizza/Battler/static/css/main.87bc6f45.chunk.css",
+    "main.js": "/AdventurePizza/Battler/static/js/main.2870fac1.chunk.js",
+    "main.js.map": "/AdventurePizza/Battler/static/js/main.2870fac1.chunk.js.map",
+    "runtime-main.js": "/AdventurePizza/Battler/static/js/runtime-main.5dc807b1.js",
+    "runtime-main.js.map": "/AdventurePizza/Battler/static/js/runtime-main.5dc807b1.js.map",
+    "static/js/2.d0b4468d.chunk.js": "/AdventurePizza/Battler/static/js/2.d0b4468d.chunk.js",
+    "static/js/2.d0b4468d.chunk.js.map": "/AdventurePizza/Battler/static/js/2.d0b4468d.chunk.js.map",
+    "static/js/3.9e68d45b.chunk.js": "/AdventurePizza/Battler/static/js/3.9e68d45b.chunk.js",
+    "static/js/3.9e68d45b.chunk.js.map": "/AdventurePizza/Battler/static/js/3.9e68d45b.chunk.js.map",
+    "index.html": "/AdventurePizza/Battler/index.html",
+    "static/css/main.87bc6f45.chunk.css.map": "/AdventurePizza/Battler/static/css/main.87bc6f45.chunk.css.map",
+    "static/js/2.d0b4468d.chunk.js.LICENSE.txt": "/AdventurePizza/Battler/static/js/2.d0b4468d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/AdventurePizza/Battler/static/media/Inconsolata-Regular.ed7f6e5b.ttf",
+    "static/media/anim.9b02fd1e.png": "/AdventurePizza/Battler/static/media/anim.9b02fd1e.png",
+    "static/media/beacon.3704f31b.svg": "/AdventurePizza/Battler/static/media/beacon.3704f31b.svg",
+    "static/media/card.d2be01bc.png": "/AdventurePizza/Battler/static/media/card.d2be01bc.png",
+    "static/media/twitter.22098cea.png": "/AdventurePizza/Battler/static/media/twitter.22098cea.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf232eb4.js",
-    "static/js/2.c8f980a2.chunk.js",
-    "static/css/main.86b8d84a.chunk.css",
+    "static/js/runtime-main.5dc807b1.js",
+    "static/js/2.d0b4468d.chunk.js",
+    "static/css/main.87bc6f45.chunk.css",
     "static/js/main.2870fac1.chunk.js"
   ]
 }
