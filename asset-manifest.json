@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.86b8d84a.chunk.css",
-    "main.js": "/static/js/main.e5c01337.chunk.js",
-    "main.js.map": "/static/js/main.e5c01337.chunk.js.map",
+    "main.js": "/static/js/main.c591b45e.chunk.js",
+    "main.js.map": "/static/js/main.c591b45e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8f5a6824.js",
     "runtime-main.js.map": "/static/js/runtime-main.8f5a6824.js.map",
     "static/js/2.9feb0c59.chunk.js": "/static/js/2.9feb0c59.chunk.js",
@@ -17,12 +17,13 @@
     "static/media/beacon.3704f31b.svg": "/static/media/beacon.3704f31b.svg",
     "static/media/card.d2be01bc.png": "/static/media/card.d2be01bc.png",
     "static/media/graph.673a7b6a.png": "/static/media/graph.673a7b6a.png",
+    "static/media/priestess.6cd949f6.gif": "/static/media/priestess.6cd949f6.gif",
     "static/media/twitter.22098cea.png": "/static/media/twitter.22098cea.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8f5a6824.js",
     "static/js/2.9feb0c59.chunk.js",
     "static/css/main.86b8d84a.chunk.css",
-    "static/js/main.e5c01337.chunk.js"
+    "static/js/main.c591b45e.chunk.js"
   ]
 }
