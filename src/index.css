@@ -3,8 +3,8 @@ body {
   font-family: "Inconsolata";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: clip;
-  overflow-x: clip;
+
+  background-color: darkslateblue;
 
 }
 @media screen and (min-width: 500px) {
@@ -13,7 +13,7 @@ body {
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: #330033;
   }
 
   /* Handle */

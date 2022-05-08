@@ -44,3 +44,18 @@
   font-size: 1.5em;
   font-family: Alagard;
 }
+
+.pixelart{
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+.background-container {
+	width: 100%;
+}
+
+.background-icon-list {
+	display: flex;
+	overflow-x: auto;
+	display: 'flex'; 
+}
